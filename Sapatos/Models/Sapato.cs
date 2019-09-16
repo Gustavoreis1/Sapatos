@@ -17,5 +17,6 @@ namespace Sapatos.Models
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo Quantidade é requerido!!")]
         public int Quantidade { get; set; }
+        public Modelo Modelo { get; set; }
     }
 }

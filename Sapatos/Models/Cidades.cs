@@ -16,6 +16,6 @@ namespace Sapatos.Models
         [MaxLength(50, ErrorMessage = "O campo Nome recebe no máximo 50 caracteres")]
         public string Nome { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
-        public IList<Estados> Estados { get; set; }
+        public Estados Estados { get; set; }
     }
 }
