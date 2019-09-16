@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SapatosWPF.View"
         mc:Ignorable="d"
-        Title="Estados" Height="450" Width="800">
-    <Grid>
-        
+        Title="Cadastar Estado" Height="450" Width="800">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Nome" Grid.Row="0" FontFamily="Corbel" FontSize="24">Nome:</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="16"></TextBox>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Button  Width="100" Margin="0,0,50,0">Salvar</Button>
+            <Button  Margin="50,0,0,0" Width="100">Cancelar</Button>
+        </StackPanel>
     </Grid>
 </Window>
