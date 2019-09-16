@@ -142,6 +142,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Sapatos\Sapatos.csproj">
+      <Project>{c85549dd-8d8f-4fa3-bb0b-8674276092e7}</Project>
+      <Name>Sapatos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
