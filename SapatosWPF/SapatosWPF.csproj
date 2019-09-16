@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\EnderecoViewModel.cs" />
+    <Compile Include="ViewModel\ModeloViewModel.cs" />
+    <Compile Include="ViewModel\PessoaFisicaViewModel.cs" />
+    <Compile Include="ViewModel\PessoaJuridicaViewModel.cs" />
+    <Compile Include="ViewModel\SapatoViewModel.cs" />
+    <Compile Include="ViewModel\VendaViewModel.cs" />
     <Compile Include="View\EnderecoWindow.xaml.cs">
       <DependentUpon>EnderecoWindow.xaml</DependentUpon>
     </Compile>
@@ -136,8 +142,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
