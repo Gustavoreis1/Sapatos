@@ -21,9 +21,9 @@ namespace Sapatos.Models
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
-        //public virtual DbSet<Sapatos.Models.Estados> Estados { get; set; }
+        public virtual DbSet<Sapatos.Models.Estados> Estados { get; set; }
 
-        //public virtual DbSet<Sapatos.Models.Cidades> Cidades { get; set; }
+        public virtual DbSet<Sapatos.Models.Cidades> Cidades { get; set; }
 
         public virtual DbSet<Sapatos.Models.Cliente> Clientes { get; set; }
 
