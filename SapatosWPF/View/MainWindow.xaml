@@ -1,0 +1,27 @@
+﻿<Window x:Class="SapatosWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SapatosWPF"
+        mc:Ignorable="d"
+        Title="INDEX" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="20" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <MenuItem Header="Gerenciar">
+                <MenuItem Header="Cadastrar Cliente">
+                    <MenuItem x:Name="PessoaJuridicaMenu" Header="Pessoa Juridica" Click="PessoaJuridicaMenu_Click"/>
+                    <MenuItem x:Name="PessoaFisicaMenu" Header="Pessoa Fisica" Click="PessoaFisicaMenu_Click"/>
+                </MenuItem>
+                <MenuItem x:Name="EstoqueMenu" Header="Estoque" Click="EstoqueMenu_Click"/>
+                <MenuItem x:Name="CidadesMenu" Header="Cidades" Click="CidadesMenu_Click"/>
+                <MenuItem x:Name="EstadosMenu" Header="Estados" Click="EstadosMenu_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="SairMenu" Header="Sair" Click="SairMenu_Click"/>
+        </Menu>
+    </Grid>
+</Window>
