@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SapatosWPF.ViewModel
 {
-    class ClienteViewModel
+    class CidadesViewModel
     {
     }
 }
