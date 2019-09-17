@@ -15,36 +15,36 @@ using System.Windows.Shapes;
 namespace SapatosWPF.View
 {
     /// <summary>
-    /// Lógica interna para PessoaJuridicaWindow.xaml
+    /// Lógica interna para ModeloWindow.xaml
     /// </summary>
-    public partial class PessoaJuridicaWindow : Window
+    public partial class ModeloWindow : Window
     {
-        //public ViewModel.PJViewModel PJViewModel { get; set; }
-        public PessoaJuridicaWindow()
+        //public ViewModel.ModeloViewModel ModeloViewModel { get; set; }
+        public ModeloWindow()
         {
             InitializeComponent();
             this.DataContext = this;
         }
 
-        private void SalvarPJ_Click(object sender, RoutedEventArgs e)
+        private void SalvarModelo_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Salvar();
+            //this.ModeloViewModel.Salvar();
             this.Close();
         }
 
-        private void CancelarPJ_Click(object sender, RoutedEventArgs e)
+        private void CancelarModelo_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void ExcluirPJ_Click(object sender, RoutedEventArgs e)
+        private void ExcluirModelo_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Excluir();
+            //this.ModeloViewModel.Excluir();
         }
 
-        private void AdicionarPJ_Click(object sender, RoutedEventArgs e)
+        private void AdicionarModelo_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Adicionar();
+            //this.ModeloViewModel.Adicionar();
         }
     }
 }

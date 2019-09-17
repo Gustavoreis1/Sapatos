@@ -19,9 +19,32 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class PessoaFisicaWindow : Window
     {
+        //public ViewModel.PFViewModel PFViewModel { get; set; }
         public PessoaFisicaWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+        }
+
+        private void SalvarPF_Click(object sender, RoutedEventArgs e)
+        {
+            //this.PFViewModel.Salvar();
+            this.Close();
+        }
+
+        private void CancelarPF_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ExcluirPF_Click(object sender, RoutedEventArgs e)
+        {
+            //this.PFViewModel.Excluir();
+        }
+
+        private void AdicionarPF_Click(object sender, RoutedEventArgs e)
+        {
+            //this.PFViewModel.Adicionar();
         }
     }
 }

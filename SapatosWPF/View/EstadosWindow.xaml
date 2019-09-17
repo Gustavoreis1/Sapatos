@@ -17,10 +17,12 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="Nome" Grid.Row="0" FontFamily="Corbel" FontSize="24">Nome:</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="16"></TextBox>
+        <TextBox Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
         <StackPanel HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button  Width="100" Margin="0,0,50,0">Salvar</Button>
-            <Button  Margin="50,0,0,0" Width="100">Cancelar</Button>
+            <Button x:Name="SalvarEstado" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarEstado_Click" Background="#FF2EDC6E">Salvar</Button>
+            <Button x:Name="ExcluirEstado" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirEstado_Click" Background="#FFAE4E3F">Excluir</Button>
+            <Button x:Name="AdicionarEstado" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarEstado_Click" Background="#FF2A86F3">Adicionar</Button>
+            <Button x:Name="CancelarEstado"   Width="100" Margin="0,0,50,0"  FontFamily="Corbel" FontSize="16" Click="CancelarEstado_Click">Cancelar</Button>
         </StackPanel>
     </Grid>
 </Window>

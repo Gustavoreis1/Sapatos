@@ -23,5 +23,26 @@ namespace SapatosWPF.View
         {
             InitializeComponent();
         }
+
+        private void SalvarEndereco_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExcluirEndereco_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AdicionarEndereco_Click(object sender, RoutedEventArgs e)
+        {
+            //this.EnderecoViewModel.Adicionar();
+        }
+
+        private void CancelarEndereco_Click(object sender, RoutedEventArgs e)
+        {
+            
+            //this.EnderecoViewModel.Adicionar();
+        }
     }
 }

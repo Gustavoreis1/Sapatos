@@ -21,12 +21,14 @@
         <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Razão Social:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">CNPJ:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Corbel" FontSize="24">Endereço:</TextBlock>
-        <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="16"></TextBox>
-        <TextBox x:Name="CNPJ" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="16"></TextBox>
-        <TextBox x:Name="Endereco" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="16"></TextBox>
+        <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="CNPJ" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="Endereco" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></TextBox>
         <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button  Width="100" Margin="0,0,50,0">Salvar</Button>
-            <Button  Margin="50,0,0,0" Width="100">Cancelar</Button>
+            <Button x:Name="SalvarPJ" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarPJ_Click" Background="#FF2EDC6E">Salvar</Button>
+            <Button x:Name="ExcluirPJ" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirPJ_Click" Background="#FFAE4E3F">Excluir</Button>
+            <Button x:Name="AdicionarPJ" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarPJ_Click" Background="#FF2A86F3">Adicionar</Button>
+            <Button x:Name="CancelarPJ"   Width="100" Margin="0,0,50,0"  FontFamily="Corbel" FontSize="16" Click="CancelarPJ_Click">Cancelar</Button>
         </StackPanel>
     </Grid>
 </Window>

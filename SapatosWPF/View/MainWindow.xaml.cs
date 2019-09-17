@@ -57,5 +57,23 @@ namespace SapatosWPF
             Window window = new EstoqueWindow();
             window.ShowDialog();
         }
+
+        private void EnderecoMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new EnderecoWindow();
+            window.ShowDialog();
+        }
+
+        private void VendaMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new VendaWindow();
+            window.ShowDialog();
+        }
+
+        private void ModeloMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new ModeloWindow();
+            window.ShowDialog();
+        }
     }
 }

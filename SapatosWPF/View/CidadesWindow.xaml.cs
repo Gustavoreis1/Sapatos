@@ -19,9 +19,32 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class CidadesWindow : Window
     {
+        //public ViewModel.CidadesViewModel CidadesViewModel { get; set; }
         public CidadesWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+        }
+
+        private void SalvarCidade_Click(object sender, RoutedEventArgs e)
+        {
+            //this.CidadesViewModel.Salvar();
+            this.Close();
+        }
+
+        private void CancelarCidade_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ExcluirCidade_Click(object sender, RoutedEventArgs e)
+        {
+            //this.CidadesViewModel.Excluir();
+        }
+
+        private void AdicionarCidade_Click(object sender, RoutedEventArgs e)
+        {
+            //this.CidadesViewModel.Adicionar();
         }
     }
 }

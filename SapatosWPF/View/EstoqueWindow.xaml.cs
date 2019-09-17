@@ -19,9 +19,32 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class EstoqueWindow : Window
     {
+        //public ViewModel.EstoqueViewModel EstoqueViewModel { get; set; }
         public EstoqueWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+        }
+
+        private void SalvarEstoque_Click(object sender, RoutedEventArgs e)
+        {
+            //this.EstoqueViewModel.Salvar();
+            this.Close();
+        }
+
+        private void CancelarEstoque_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ExcluirEstoque_Click(object sender, RoutedEventArgs e)
+        {
+            //this.EstoqueViewModel.Excluir();
+        }
+
+        private void AdicionarEstoque_Click(object sender, RoutedEventArgs e)
+        {
+            //this.EstoqueViewModel.Adicionar();
         }
     }
 }
