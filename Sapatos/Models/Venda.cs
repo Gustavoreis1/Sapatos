@@ -20,7 +20,6 @@ namespace Sapatos.Models
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo Valor Total é requerido!!")]
         public decimal ValorTotal { get; set; }
-        public PessoaFisica PessoaFisica { get; set; }
-        public PessoaJuridica PessoaJuridica { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

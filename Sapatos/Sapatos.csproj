@@ -50,6 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201909170001475_corrigindo_endereco_201909162100.cs" />
+    <Compile Include="Migrations\201909170001475_corrigindo_endereco_201909162100.Designer.cs">
+      <DependentUpon>201909170001475_corrigindo_endereco_201909162100.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170022217_corrigido_mais_uma_entidade.cs" />
+    <Compile Include="Migrations\201909170022217_corrigido_mais_uma_entidade.Designer.cs">
+      <DependentUpon>201909170022217_corrigido_mais_uma_entidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cidades.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -67,6 +75,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909170001475_corrigindo_endereco_201909162100.resx">
+      <DependentUpon>201909170001475_corrigindo_endereco_201909162100.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170022217_corrigido_mais_uma_entidade.resx">
+      <DependentUpon>201909170022217_corrigido_mais_uma_entidade.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
