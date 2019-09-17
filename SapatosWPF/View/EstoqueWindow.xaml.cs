@@ -46,5 +46,6 @@ namespace SapatosWPF.View
         {
             //this.EstoqueViewModel.Adicionar();
         }
+        
     }
 }

@@ -16,6 +16,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -31,8 +37,27 @@
         <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
         <TextBox x:Name="CPF" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></TextBox>
         <DatePicker x:Name="DataNascimento" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></DatePicker>
-        <TextBox x:Name="Endereco" Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20"></TextBox>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal">
+        <TextBox x:Name="Logradouro" Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="Numero" Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="CEP" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="Complemento" Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20"></TextBox>
+        <ComboBox x:Name="Cidade" Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20"></ComboBox>
+        <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20"></ComboBox>
+        <DataGrid ItemsSource="{Binding PessoaFisica}" AutoGenerateColumns="False" Grid.Row="9" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_PF}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nascimento" Binding="{Binding DataNascimento}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Logradouro" Binding="{Binding Logradouro}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numero" Binding="{Binding Numero}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CEP" Binding="{Binding CEP}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Nome}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="11" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="SalvarPF" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarPF_Click" Background="#FF2EDC6E">Salvar</Button>
             <Button x:Name="ExcluirPF" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirPF_Click" Background="#FFAE4E3F">Excluir</Button>
             <Button x:Name="AdicionarPF" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarPF_Click" Background="#FF2A86F3">Adicionar</Button>

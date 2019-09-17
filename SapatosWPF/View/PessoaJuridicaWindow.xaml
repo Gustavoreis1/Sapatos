@@ -15,16 +15,45 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Razão Social:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">CNPJ:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Corbel" FontSize="24">Endereço:</TextBlock>
-        <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Corbel" FontSize="24">Logradouro:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" FontFamily="Corbel" FontSize="24">Numero:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" FontFamily="Corbel" FontSize="24">CEP:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="5" FontFamily="Corbel" FontSize="24">Complemento:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="6" FontFamily="Corbel" FontSize="24">Cidade:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="7" FontFamily="Corbel" FontSize="24">Estado:</TextBlock>
+        <TextBox x:Name="RazaoSocial" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
         <TextBox x:Name="CNPJ" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></TextBox>
-        <TextBox x:Name="Endereco" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></TextBox>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">
+        <TextBox x:Name="Logradouro" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="Numero" Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="CEP" Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="Complemento" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20"></TextBox>
+        <ComboBox x:Name="Cidade" Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20"></ComboBox>
+        <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20"></ComboBox>
+        <DataGrid ItemsSource="{Binding PessoaJuridica}" AutoGenerateColumns="False" Grid.Row="8" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_PJ}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Razão Social" Binding="{Binding RazaoSocial}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CNPJ" Binding="{Binding CNPJ}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Logradouro" Binding="{Binding Logradouro}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numero" Binding="{Binding Numero}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CEP" Binding="{Binding CEP}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Nome}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="10" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="SalvarPJ" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarPJ_Click" Background="#FF2EDC6E">Salvar</Button>
             <Button x:Name="ExcluirPJ" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirPJ_Click" Background="#FFAE4E3F">Excluir</Button>
             <Button x:Name="AdicionarPJ" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarPJ_Click" Background="#FF2A86F3">Adicionar</Button>

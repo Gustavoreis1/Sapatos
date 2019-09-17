@@ -17,6 +17,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -32,7 +33,18 @@
         <TextBox x:Name="Cor" Grid.Column="3" Grid.Row="3" FontFamily="Corbel" FontSize="20"></TextBox>
         <TextBox x:Name="Preco" Grid.Column="4" Grid.Row="4" FontFamily="Corbel" FontSize="20"></TextBox>
         <TextBox x:Name="Fotografia" Grid.Column="5" Grid.Row="5" FontFamily="Corbel" FontSize="20"></TextBox>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal">
+        <DataGrid ItemsSource="{Binding Modelo}" AutoGenerateColumns="False" Grid.Row="6" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_Modelo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cadarço" Binding="{Binding Cadarco}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Material" Binding="{Binding Material}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cor" Binding="{Binding Cor}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Preço" Binding="{Binding Preco}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Fotografia" Binding="{Binding Fotografia}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="SalvarModelo" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarModelo_Click" Background="#FF2EDC6E">Salvar</Button>
             <Button x:Name="ExcluirModelo" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirModelo_Click" Background="#FFAE4E3F">Excluir</Button>
             <Button x:Name="AdicionarModelo" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarModelo_Click" Background="#FF2A86F3">Adicionar</Button>

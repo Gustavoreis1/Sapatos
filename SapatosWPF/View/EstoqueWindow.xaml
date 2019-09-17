@@ -13,14 +13,26 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Numeração:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">Quantidade:</TextBlock>
-        <TextBox x:Name="Numeracao" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
-        <TextBox x:Name="Quantidade" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></TextBox>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+        <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Modelo:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">Numeração:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Corbel" FontSize="24">Quantidade:</TextBlock>
+        <ComboBox x:Name="Modelo" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" ></ComboBox>
+        <TextBox x:Name="Numeracao" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="Quantidade" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></TextBox>
+        <DataGrid ItemsSource="{Binding Sapato}" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_Sapato}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="SalvarEstoque" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarEstoque_Click" Background="#FF2EDC6E">Salvar</Button>
             <Button x:Name="ExcluirEstoque" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirEstoque_Click" Background="#FFAE4E3F">Excluir</Button>
             <Button x:Name="AdicionarEstoque" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarEstoque_Click" Background="#FF2A86F3">Adicionar</Button>

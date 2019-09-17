@@ -19,19 +19,22 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class EnderecoWindow : Window
     {
+        //public ViewModel.EnderecoViewModel EnderecoViewModel { get; set; }
         public EnderecoWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
 
         private void SalvarEndereco_Click(object sender, RoutedEventArgs e)
         {
-
+            //this.EnderecoViewModel.Salvar();
+            this.Close();
         }
 
         private void ExcluirEndereco_Click(object sender, RoutedEventArgs e)
         {
-
+            //this.EnderecoViewModel.Excluir();
         }
 
         private void AdicionarEndereco_Click(object sender, RoutedEventArgs e)
