@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.779
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sapatos", "Sapatos\Sapatos.csproj", "{C85549DD-8D8F-4FA3-BB0B-8674276092E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SapatosWPF", "SapatosWPF\SapatosWPF.csproj", "{FA853B50-17A3-4A7D-A477-3F7ED26B316B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C85549DD-8D8F-4FA3-BB0B-8674276092E7} = {C85549DD-8D8F-4FA3-BB0B-8674276092E7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

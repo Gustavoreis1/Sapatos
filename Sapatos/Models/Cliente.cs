@@ -11,5 +11,7 @@ namespace Sapatos.Models
     {
         [Key]
         public int ID_Cliente { get; set; }
+        public Endereco Endereco { get; set; }
+        public String Nome { get; set; }
     }
 }

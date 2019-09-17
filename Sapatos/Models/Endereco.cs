@@ -26,5 +26,6 @@ namespace Sapatos.Models
         //////////////////////////////////////////////////////////////////////////////////
         [MaxLength(200, ErrorMessage = "O campo Complemento no máximo 200 caracteres")]
         public string Complemento { get; set; }
+        public Cidades Cidade { get; set; }
     }
 }

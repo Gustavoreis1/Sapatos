@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sapatos.Models
 {
-    public class PessoaJuridica
+    public class PessoaJuridica : Cliente
     {
         [Key]
         public int ID_PJ { get; set; }
