@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SapatosWPF.ViewModel
 {
-    class PessoaJuridicaViewModel
+    public class PessoaJuridicaViewModel
     {
         public Sapatos.Models.Endereco Endereco { get; set; }
         public Sapatos.Models.Cidades Cidade { get; set; }

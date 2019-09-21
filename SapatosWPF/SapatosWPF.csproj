@@ -63,6 +63,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\CidadesViewModel.cs" />
+    <Compile Include="ViewModel\EstadosViewModel.cs" />
     <Compile Include="ViewModel\ModeloViewModel.cs" />
     <Compile Include="ViewModel\PessoaFisicaViewModel.cs" />
     <Compile Include="ViewModel\PessoaJuridicaViewModel.cs" />
