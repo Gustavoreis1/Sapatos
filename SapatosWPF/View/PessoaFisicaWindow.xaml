@@ -53,8 +53,8 @@
                 <DataGridTextColumn Header="Numero" Binding="{Binding Endereco.Numero}"></DataGridTextColumn>
                 <DataGridTextColumn Header="CEP" Binding="{Binding Endereco.CEP}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Complemento" Binding="{Binding Endereco.Complemento}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Estado" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Endereco.Cidade.Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Endereco.Cidade.Estado.Nome}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel HorizontalAlignment="Center" Grid.Row="11" Grid.ColumnSpan="2" Orientation="Horizontal">

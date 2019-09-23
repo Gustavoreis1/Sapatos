@@ -14,7 +14,7 @@ namespace Sapatos.Models
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo Nome é requerido!!")]
         [MaxLength(50, ErrorMessage = "O campo Nome recebe no máximo 50 caracteres")]
-        public string Nome { get; set; }
+        public String Nome { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
         public Estados Estado { get; set; }
     }

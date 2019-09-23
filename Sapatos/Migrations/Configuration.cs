@@ -30,7 +30,8 @@ namespace Sapatos.Migrations
                     Numero = "00",
                     Logradouro = "Rua Teste",
                     CEP = "00.000-000",
-                    Complemento = "N/A"
+                    Complemento = "N/A",
+                    Cidade = new Cidades() { Nome = "Morretes", Estado = new Estados { Nome = "Paraná" } }
                 }
             };
 
@@ -44,7 +45,8 @@ namespace Sapatos.Migrations
                     Numero = "01",
                     Logradouro = "Rua Teste 1",
                     CEP = "00.000-001",
-                    Complemento = "N/A"
+                    Complemento = "N/A",
+                    Cidade = new Cidades() {Nome = "Curitiba", Estado = new Estados { Nome = "Paraná"} }
                 }
             };
 
