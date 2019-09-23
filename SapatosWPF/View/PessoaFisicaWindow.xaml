@@ -43,7 +43,7 @@
         <TextBox x:Name="Complemento" Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20"></TextBox>
         <ComboBox x:Name="Cidade" Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20"></ComboBox>
         <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20"></ComboBox>
-        <DataGrid ItemsSource="{Binding PessoaFisica}" AutoGenerateColumns="False" Grid.Row="9" Grid.ColumnSpan="2">
+        <DataGrid ItemsSource="{Binding Pessoas}" AutoGenerateColumns="False" Grid.Row="9" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID_PF}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>

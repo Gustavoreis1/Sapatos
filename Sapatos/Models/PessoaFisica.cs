@@ -14,7 +14,7 @@ namespace Sapatos.Models
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo CPF é requerido!!")]
         [MaxLength(15, ErrorMessage = "O campo CPF recebe no máximo 15 caracteres")]
-        public string CNPJ { get; set; }
+        public string CPF { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo Data de Nascimento é requerido!!")]
         public DateTime DataNascimento { get; set; }

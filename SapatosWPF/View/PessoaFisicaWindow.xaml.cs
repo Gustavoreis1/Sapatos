@@ -19,11 +19,12 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class PessoaFisicaWindow : Window
     {
-        //public ViewModel.PFViewModel PFViewModel { get; set; }
+        public ViewModel.PessoaFisicaViewModel PFViewModel { get; set; }
         public PessoaFisicaWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            this.PFViewModel = new ViewModel.PessoaFisicaViewModel();
+            this.DataContext = this.PFViewModel;
         }
 
         private void SalvarPF_Click(object sender, RoutedEventArgs e)
