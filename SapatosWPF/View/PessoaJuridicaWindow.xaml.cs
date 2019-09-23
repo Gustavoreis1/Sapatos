@@ -29,7 +29,7 @@ namespace SapatosWPF.View
 
         private void SalvarPJ_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Salvar();
+            this.PJViewModel.Salvar();
             this.Close();
         }
 
@@ -45,7 +45,7 @@ namespace SapatosWPF.View
 
         private void AdicionarPJ_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Adicionar();
+            this.PJViewModel.Adicionar();
         }
     }
 }

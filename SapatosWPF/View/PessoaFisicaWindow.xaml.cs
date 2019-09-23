@@ -29,7 +29,7 @@ namespace SapatosWPF.View
 
         private void SalvarPF_Click(object sender, RoutedEventArgs e)
         {
-            //this.PFViewModel.Salvar();
+            this.PFViewModel.Salvar();
             this.Close();
         }
 
@@ -45,7 +45,7 @@ namespace SapatosWPF.View
 
         private void AdicionarPF_Click(object sender, RoutedEventArgs e)
         {
-            //this.PFViewModel.Adicionar();
+            this.PFViewModel.Adicionar();
         }
     }
 }

@@ -39,5 +39,13 @@ namespace SapatosWPF.ViewModel
             }
         }
 
+        public void Adicionar()
+        {
+            Sapatos.Models.PessoaJuridica NewPj = new Sapatos.Models.PessoaJuridica();
+            this.Pessoas.Add(NewPj);
+            this.context.Clientes.Add(NewPj);
+            this.PjSelecionada = NewPj;
+        }
+
     }
 }
