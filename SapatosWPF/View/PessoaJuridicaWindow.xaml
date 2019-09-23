@@ -40,15 +40,15 @@
         <TextBox x:Name="Complemento" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20"></TextBox>
         <ComboBox x:Name="Cidade" Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20"></ComboBox>
         <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20"></ComboBox>
-        <DataGrid ItemsSource="{Binding PessoaJuridica}" AutoGenerateColumns="False" Grid.Row="8" Grid.ColumnSpan="2">
+        <DataGrid ItemsSource="{Binding Pessoas}" AutoGenerateColumns="False" Grid.Row="8" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID_PJ}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Razão Social" Binding="{Binding RazaoSocial}"></DataGridTextColumn>
                 <DataGridTextColumn Header="CNPJ" Binding="{Binding CNPJ}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Logradouro" Binding="{Binding Logradouro}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Numero" Binding="{Binding Numero}"></DataGridTextColumn>
-                <DataGridTextColumn Header="CEP" Binding="{Binding CEP}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Logradouro" Binding="{Binding Endereco.Logradouro}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numero" Binding="{Binding Endereco.Numero}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CEP" Binding="{Binding Endereco.CEP}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Endereco.Complemento}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Estado" Binding="{Binding Nome}"></DataGridTextColumn>
             </DataGrid.Columns>

@@ -49,10 +49,10 @@
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"></DataGridTextColumn>
                 <DataGridTextColumn Header="CPF" Binding="{Binding CPF}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Nascimento" Binding="{Binding DataNascimento}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Logradouro" Binding="{Binding Logradouro}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Numero" Binding="{Binding Numero}"></DataGridTextColumn>
-                <DataGridTextColumn Header="CEP" Binding="{Binding CEP}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Logradouro" Binding="{Binding Endereco.Logradouro}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numero" Binding="{Binding Endereco.Numero}"></DataGridTextColumn>
+                <DataGridTextColumn Header="CEP" Binding="{Binding Endereco.CEP}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Endereco.Complemento}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Estado" Binding="{Binding Nome}"></DataGridTextColumn>
             </DataGrid.Columns>

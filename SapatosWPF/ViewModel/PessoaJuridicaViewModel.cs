@@ -9,17 +9,19 @@ namespace SapatosWPF.ViewModel
 {
     public class PessoaJuridicaViewModel
     {
+        public Sapatos.Models.PessoaJuridica PessoaJuridica { get; set; }
         public Sapatos.Models.Endereco Endereco { get; set; }
         public Sapatos.Models.Cidades Cidade { get; set; }
         public Sapatos.Models.PessoaJuridica pjSelecionada { get; set; }
-        public ObservableCollection<Sapatos.Models.PessoaJuridica> pessoas { get; set; }
+        public ObservableCollection<Sapatos.Models.PessoaJuridica> Pessoas { get; set; }
         Sapatos.Models.SapatosContext context { get; set; }
 
         public Boolean podeExcluir => this.pjSelecionada != null;
         public PessoaJuridicaViewModel()
         {
+            this.PessoaJuridica = new Sapatos.Models.PessoaJuridica();
             context = new Sapatos.Models.SapatosContext();
-            this.pessoas = new ObservableCollection<Sapatos.Models.PessoaJuridica>(context.PessoaJuridicas.ToList());
+            this.Pessoas = new ObservableCollection<Sapatos.Models.PessoaJuridica>(context.PessoaJuridicas.Include("Endereco").ToList());
             this.pjSelecionada = context.PessoaJuridicas.FirstOrDefault();
         }
 
