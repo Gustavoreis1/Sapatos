@@ -22,7 +22,7 @@ namespace SapatosWPF.ViewModel
             this.PessoaFisica = new Sapatos.Models.PessoaFisica();
             context = new Sapatos.Models.SapatosContext();
             this.Pessoas = new ObservableCollection<Sapatos.Models.PessoaFisica>(context.PessoaFisicas.Include("Endereco").ToList());
-            this.pfSelecionada = context.PessoaFisicas.FirstOrDefault();
+            this.pfSelecionada = context.PessoaFisicas.Include("Endereco").FirstOrDefault();
         }
 
         public void Salvar()

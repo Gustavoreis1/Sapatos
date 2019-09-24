@@ -36,7 +36,7 @@
         <TextBlock Grid.Column="0" Grid.Row="8" FontFamily="Corbel" FontSize="24">Estado:</TextBlock>
         <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Nome}"></TextBox>
         <TextBox x:Name="CPF" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.CPF}"></TextBox>
-        <DatePicker x:Name="DataNascimento" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.DataNascimento}"></DatePicker>
+        <DatePicker x:Name="DataNascimento" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20" SelectedDate="{Binding pfSelecionada.DataNascimento}"></DatePicker>
         <TextBox x:Name="Logradouro" Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Logradouro}"></TextBox>
         <TextBox x:Name="Numero" Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Numero}"></TextBox>
         <TextBox x:Name="CEP" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.CEP}"></TextBox>
