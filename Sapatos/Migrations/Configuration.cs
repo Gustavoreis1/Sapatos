@@ -19,7 +19,12 @@ namespace Sapatos.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-
+            Estados Est = new Estados() { Nome = "Paraná" };
+            Cidades Cid = new Cidades() { Nome = "Curitiba", Estado = Est };
+            Cidades Cid2 = new Cidades() { Nome = "Morretes", Estado = Est };
+            AdicionarEstado(context,Est);
+            AdicionarCidade(context, Cid);
+            AdicionarCidade(context, Cid2);
             PessoaFisica pfTeste1 = new PessoaFisica()
             {
                 Nome = "Teste pessoa fisica 1",
@@ -31,7 +36,7 @@ namespace Sapatos.Migrations
                     Logradouro = "Rua Teste",
                     CEP = "00.000-000",
                     Complemento = "N/A",
-                    Cidade = new Cidades() { Nome = "Morretes", Estado = new Estados { Nome = "Paraná" } }
+                    Cidade = Cid
                 }
             };
 
@@ -46,7 +51,7 @@ namespace Sapatos.Migrations
                     Logradouro = "Rua Teste 1",
                     CEP = "00.000-001",
                     Complemento = "N/A",
-                    Cidade = new Cidades() {Nome = "Curitiba", Estado = new Estados { Nome = "Paraná"} }
+                    Cidade = Cid2
                 }
             };
 
@@ -74,6 +79,29 @@ namespace Sapatos.Migrations
             if (pessoaJuridica == null)
             {
                 context.PessoaJuridicas.Add(pj);
+            }
+        }
+
+        private static void AdicionarEstado(Models.SapatosContext context, Estados est)
+        {
+            Estados estados =
+                    (from db in context.Estados
+                     where db.Nome == est.Nome
+                     select db).FirstOrDefault();
+            if (estados == null)
+            {
+                context.Estados.Add(est);
+            }
+        }
+        private static void AdicionarCidade(Models.SapatosContext context, Cidades cid)
+        {
+            Cidades c =
+                    (from db in context.Cidades
+                     where db.Nome == cid.Nome
+                     select db).FirstOrDefault();
+            if (c == null)
+            {
+                context.Cidades.Add(cid);
             }
         }
     }

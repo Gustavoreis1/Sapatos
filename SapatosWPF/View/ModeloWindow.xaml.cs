@@ -19,16 +19,17 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class ModeloWindow : Window
     {
-        //public ViewModel.ModeloViewModel ModeloViewModel { get; set; }
+        public ViewModel.ModeloViewModel ModeloViewModel { get; set; }
         public ModeloWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            this.ModeloViewModel = new ViewModel.ModeloViewModel();
+            this.DataContext = this.ModeloViewModel;
         }
 
         private void SalvarModelo_Click(object sender, RoutedEventArgs e)
         {
-            //this.ModeloViewModel.Salvar();
+            this.ModeloViewModel.Salvar();
             this.Close();
         }
 
@@ -39,12 +40,12 @@ namespace SapatosWPF.View
 
         private void ExcluirModelo_Click(object sender, RoutedEventArgs e)
         {
-            //this.ModeloViewModel.Excluir();
+            this.ModeloViewModel.Excluir();
         }
 
         private void AdicionarModelo_Click(object sender, RoutedEventArgs e)
         {
-            //this.ModeloViewModel.Adicionar();
+            this.ModeloViewModel.Adicionar();
         }
     }
 }
