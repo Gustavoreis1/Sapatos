@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sapatos;
 using Sapatos.Models;
 
 namespace SapatosWPF.ViewModel
@@ -35,8 +33,7 @@ namespace SapatosWPF.ViewModel
             this.Estados = new ObservableCollection<Estados>(context.Estados.ToList());
             this.CidadeSelecionada = context.Cidades.FirstOrDefault();
             this.EstadoSelecionado = context.Estados.FirstOrDefault();
-
-
+            
         }
 
         public void Excluir()

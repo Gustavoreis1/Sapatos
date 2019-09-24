@@ -4,21 +4,35 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sapatos.Models;
 
 namespace SapatosWPF.ViewModel
 {
     public class SapatoViewModel
     {
-        public Sapatos.Models.Sapato Sapato { get; set; }
-        public ObservableCollection<Sapatos.Models.Sapato> Sapatos { get; set; }
-        Sapatos.Models.SapatosContext context { get; set; }
-        public Sapatos.Models.Sapato SapatoSelecionado { get; set; }
+        public ObservableCollection<Sapato> Sapatos { get; set; }
+        public ObservableCollection<Modelo> Modelos { get; set; }
+
+        public Boolean PodeExcluir
+        {
+            get
+            {
+                return this.SapatoSelecionado != null;
+            }
+        }
+        public Sapato SapatoSelecionado { get; set; }
+        public Modelo ModeloSelecionado { get; set; }
+        private SapatosContext context { get; set; }
+        public Sapato Sapato { get; set; }
+        
         public SapatoViewModel()
         {
-            this.Sapato = new Sapatos.Models.Sapato();
-            context = new Sapatos.Models.SapatosContext();
-            this.Sapatos = new ObservableCollection<Sapatos.Models.Sapato>(context.Sapatos.ToList());
+            Sapato = new Sapato();
+            context = new SapatosContext();
+            this.Sapatos = new ObservableCollection<Sapato>(context.Sapatos.Include("Modelo").ToList());
+            this.Modelos = new ObservableCollection<Modelo>(context.Modelos.ToList());
             this.SapatoSelecionado = context.Sapatos.FirstOrDefault();
+            this.ModeloSelecionado = context.Modelos.FirstOrDefault();
         }
 
 
@@ -38,7 +52,7 @@ namespace SapatosWPF.ViewModel
         }
         public void Adicionar()
         {
-            Sapatos.Models.Sapato NewSapato = new Sapatos.Models.Sapato();
+            Sapato NewSapato = new Sapato();
             this.Sapatos.Add(NewSapato);
             this.context.Sapatos.Add(NewSapato);
             this.SapatoSelecionado = NewSapato;

@@ -21,13 +21,13 @@
         <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Modelo:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">Numeração:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Corbel" FontSize="24">Quantidade:</TextBlock>
-        <ComboBox x:Name="Modelo" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" ></ComboBox>
-        <TextBox x:Name="Numeracao" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></TextBox>
-        <TextBox x:Name="Quantidade" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></TextBox>
-        <DataGrid ItemsSource="{Binding Sapato}" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2">
+        <ComboBox x:Name="Modelo" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Modelos}" DisplayMemberPath="Nome" SelectedItem="{Binding SapatoSelecionado.Modelo}"></ComboBox>
+        <TextBox x:Name="Numeracao" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20" Text="{Binding SapatoSelecionado.Numeracao}"></TextBox>
+        <TextBox x:Name="Quantidade" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20" Text="{Binding SapatoSelecionado.Quantidade}"></TextBox>
+        <DataGrid ItemsSource="{Binding Sapato}" SelectedItem="{Binding SapatoSelecionado}" AutoGenerateColumns="False" Grid.Row="3" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID_Sapato}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo.Nome}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Numeração" Binding="{Binding Numeracao}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}"></DataGridTextColumn>
             </DataGrid.Columns>
