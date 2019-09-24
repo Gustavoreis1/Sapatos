@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201909230049361_correcao_cpf_cliente201909222149.Designer.cs">
       <DependentUpon>201909230049361_correcao_cpf_cliente201909222149.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909232313341_correcao_classe_sapato_201909232013.cs" />
+    <Compile Include="Migrations\201909232313341_correcao_classe_sapato_201909232013.Designer.cs">
+      <DependentUpon>201909232313341_correcao_classe_sapato_201909232013.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cidades.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909230049361_correcao_cpf_cliente201909222149.resx">
       <DependentUpon>201909230049361_correcao_cpf_cliente201909222149.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909232313341_correcao_classe_sapato_201909232013.resx">
+      <DependentUpon>201909232313341_correcao_classe_sapato_201909232013.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

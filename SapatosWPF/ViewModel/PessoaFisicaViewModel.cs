@@ -21,12 +21,13 @@ namespace SapatosWPF.ViewModel
         {
             this.PessoaFisica = new Sapatos.Models.PessoaFisica();
             context = new Sapatos.Models.SapatosContext();
-            this.Pessoas = new ObservableCollection<Sapatos.Models.PessoaFisica>(context.PessoaFisicas.ToList());
-            this.pfSelecionada = context.PessoaFisicas.FirstOrDefault();
+            this.Pessoas = new ObservableCollection<Sapatos.Models.PessoaFisica>(context.PessoaFisicas.Include("Endereco").ToList());
+            this.pfSelecionada = context.PessoaFisicas.Include("Endereco").FirstOrDefault();
         }
 
         public void Salvar()
         {
+            
             this.context.SaveChanges();
         }
 
@@ -37,6 +38,13 @@ namespace SapatosWPF.ViewModel
                 this.context.PessoaFisicas.Remove(this.pfSelecionada);
 
             }
+        }
+        public void Adicionar()
+        {
+            Sapatos.Models.PessoaFisica NewPf = new Sapatos.Models.PessoaFisica();
+            this.Pessoas.Add(NewPf);
+            this.context.PessoaFisicas.Add(NewPf);
+            this.pfSelecionada = NewPf;
         }
 
 

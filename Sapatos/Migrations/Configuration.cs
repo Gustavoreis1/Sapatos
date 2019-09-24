@@ -30,11 +30,28 @@ namespace Sapatos.Migrations
                     Numero = "00",
                     Logradouro = "Rua Teste",
                     CEP = "00.000-000",
-                    Complemento = "N/A"
+                    Complemento = "N/A",
+                    Cidade = new Cidades() { Nome = "Morretes", Estado = new Estados { Nome = "Paraná" } }
+                }
+            };
+
+            PessoaJuridica pjTeste1 = new PessoaJuridica()
+            {
+                Nome = "Teste pessoa fisica 1",
+                RazaoSocial = "Empresa de teste",
+                CNPJ = "00000000000100",
+                Endereco = new Endereco()
+                {
+                    Numero = "01",
+                    Logradouro = "Rua Teste 1",
+                    CEP = "00.000-001",
+                    Complemento = "N/A",
+                    Cidade = new Cidades() {Nome = "Curitiba", Estado = new Estados { Nome = "Paraná"} }
                 }
             };
 
             AdicionarPessoaFisica(context, pfTeste1);
+            AdicionarPessoaJuridica(context, pjTeste1);
         }
         private static void AdicionarPessoaFisica(Models.SapatosContext context, PessoaFisica pf)
         {
@@ -45,6 +62,18 @@ namespace Sapatos.Migrations
             if (pessoaFisica == null)
             {
                 context.PessoaFisicas.Add(pf);
+            }
+        }
+
+        private static void AdicionarPessoaJuridica(Models.SapatosContext context, PessoaJuridica pj)
+        {
+            PessoaJuridica pessoaJuridica =
+                    (from db in context.PessoaJuridicas
+                     where db.CNPJ == pj.CNPJ
+                     select db).FirstOrDefault();
+            if (pessoaJuridica == null)
+            {
+                context.PessoaJuridicas.Add(pj);
             }
         }
     }

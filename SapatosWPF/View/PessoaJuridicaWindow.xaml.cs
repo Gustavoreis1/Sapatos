@@ -19,16 +19,17 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class PessoaJuridicaWindow : Window
     {
-        //public ViewModel.PJViewModel PJViewModel { get; set; }
+        public ViewModel.PessoaJuridicaViewModel PJViewModel { get; set; }
         public PessoaJuridicaWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            this.PJViewModel = new ViewModel.PessoaJuridicaViewModel();
+            this.DataContext = this.PJViewModel;
         }
 
         private void SalvarPJ_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Salvar();
+            this.PJViewModel.Salvar();
             this.Close();
         }
 
@@ -44,7 +45,7 @@ namespace SapatosWPF.View
 
         private void AdicionarPJ_Click(object sender, RoutedEventArgs e)
         {
-            //this.PJViewModel.Adicionar();
+            this.PJViewModel.Adicionar();
         }
     }
 }
