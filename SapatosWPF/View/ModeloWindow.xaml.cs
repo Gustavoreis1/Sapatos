@@ -26,8 +26,8 @@ namespace SapatosWPF.View
             this.ModeloViewModel = new ViewModel.ModeloViewModel();
             this.DataContext = this.ModeloViewModel;
         }
-
-        private void SalvarModelo_Click(object sender, RoutedEventArgs e)
+ 
+    private void SalvarModelo_Click(object sender, RoutedEventArgs e)
         {
             this.ModeloViewModel.Salvar();
             this.Close();
@@ -47,5 +47,7 @@ namespace SapatosWPF.View
         {
             this.ModeloViewModel.Adicionar();
         }
+
+
     }
 }
