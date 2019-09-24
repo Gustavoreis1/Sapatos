@@ -41,8 +41,8 @@
         <TextBox x:Name="Numero" Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Numero}"></TextBox>
         <TextBox x:Name="CEP" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.CEP}"></TextBox>
         <TextBox x:Name="Complemento" Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Complemento}"></TextBox>
-        <ComboBox x:Name="Cidade" Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20"></ComboBox>
-        <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20"></ComboBox>
+        <ComboBox x:Name="Cidade" Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Cidades}" DisplayMemberPath="Nome" SelectedItem="{Binding pfSelecionada.Cidade}"></ComboBox>
+        <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Estados}" DisplayMemberPath="Nome" SelectedItem="{Binding pfSelecionada.Cidade.Estado}"></ComboBox>
         <DataGrid 
             ItemsSource="{Binding Pessoas}"
             SelectedItem="{Binding pfSelecionada}"

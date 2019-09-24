@@ -4,25 +4,34 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sapatos.Models;
 
 namespace SapatosWPF.ViewModel
 {
     public class PessoaJuridicaViewModel
     {
-        public Sapatos.Models.PessoaJuridica PessoaJuridica { get; set; }
-        public Sapatos.Models.Endereco Endereco { get; set; }
-        public Sapatos.Models.Cidades Cidade { get; set; }
-        public Sapatos.Models.PessoaJuridica PjSelecionada { get; set; }
-        public ObservableCollection<Sapatos.Models.PessoaJuridica> Pessoas { get; set; }
-        Sapatos.Models.SapatosContext context { get; set; }
+        public PessoaJuridica PessoaJuridica { get; set; }
+        public Endereco Endereco { get; set; }
+        public Cidades Cidade { get; set; }
+        public PessoaJuridica PjSelecionada { get; set; }
+        public ObservableCollection<PessoaJuridica> Pessoas { get; set; }
+        public ObservableCollection<Cidades> Cidades { get; set; }
+        public ObservableCollection<Estados> Estados { get; set; }
+        SapatosContext context { get; set; }
+        public Cidades CidadeSelecionada { get; set; }
+        public Estados EstadoSelecionado { get; set; }
 
         public Boolean PodeExcluir => this.PjSelecionada != null;
         public PessoaJuridicaViewModel()
         {
-            this.PessoaJuridica = new Sapatos.Models.PessoaJuridica();
-            context = new Sapatos.Models.SapatosContext();
-            this.Pessoas = new ObservableCollection<Sapatos.Models.PessoaJuridica>(context.PessoaJuridicas.Include("Endereco").ToList());
+            this.PessoaJuridica = new PessoaJuridica();
+            context = new SapatosContext();
+            this.Pessoas = new ObservableCollection<PessoaJuridica>(context.PessoaJuridicas.Include("Endereco").ToList());
             this.PjSelecionada = context.PessoaJuridicas.FirstOrDefault();
+            this.Cidades = new ObservableCollection<Cidades>(context.Cidades.Include("Estado").ToList());
+            this.Estados = new ObservableCollection<Estados>(context.Estados.ToList());
+            this.CidadeSelecionada = context.Cidades.FirstOrDefault();
+            this.EstadoSelecionado = context.Estados.FirstOrDefault();
         }
 
         public void Salvar()

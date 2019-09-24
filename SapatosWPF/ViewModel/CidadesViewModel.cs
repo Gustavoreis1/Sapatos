@@ -30,7 +30,7 @@ namespace SapatosWPF.ViewModel
         public CidadesViewModel()
         {
             cidade = new Cidades();
-            context = new Sapatos.Models.SapatosContext();
+            context = new SapatosContext();
             this.Cidades = new ObservableCollection<Cidades>(context.Cidades.Include("Estado").ToList());
             this.Estados = new ObservableCollection<Estados>(context.Estados.ToList());
             this.CidadeSelecionada = context.Cidades.FirstOrDefault();
