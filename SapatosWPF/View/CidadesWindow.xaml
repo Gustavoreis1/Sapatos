@@ -20,13 +20,13 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Nome:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">Estado:</TextBlock>
-        <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></TextBox>
-        <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></ComboBox>
-        <DataGrid ItemsSource="{Binding Cidades}" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="2">
+        <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" Text="{Binding CidadeSelecionada.Nome}"></TextBox>
+        <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Estados}" DisplayMemberPath="Nome" SelectedItem="{Binding CidadeSelecionada.Estado}"></ComboBox>
+        <DataGrid ItemsSource="{Binding Cidades}" SelectedItem="{Binding CidadeSelecionada}" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID_Cidade}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Estado" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Estado.Nome}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">

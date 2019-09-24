@@ -1,28 +1,50 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sapatos;
+using Sapatos.Models;
 
 namespace SapatosWPF.ViewModel
 {
     public class EstadosViewModel
     {
-        public Sapatos.Models.Estados Estado { get; set; }
+        public ObservableCollection<Estados> Estados { get; set; }
 
-        Sapatos.Models.SapatosContext context { get; set; }
+        public Boolean PodeExcluir
+        {
+            get
+            {
+                return this.EstadoSelecionado != null;
+            }
+        }
 
-        public Sapatos.Models.Estados estadoSelecionado { get; set; }
-        public ObservableCollection<Sapatos.Models.Estados> Estados { get; set; }
+        public Estados EstadoSelecionado { get; set; }
+        private Sapatos.Models.SapatosContext context { get; set; }
+        public Estados estado { get; set; }
 
-        public Boolean podeExcluir => this.estadoSelecionado != null;
         public EstadosViewModel()
         {
+            estado = new Estados();
             context = new Sapatos.Models.SapatosContext();
-            this.Estado = new Sapatos.Models.Estados();
-            this.Estados = new ObservableCollection<Sapatos.Models.Estados>(context.Estados.ToList());
-            this.estadoSelecionado = context.Estados.FirstOrDefault();
+            this.Estados = new ObservableCollection<Estados>(context.Estados.ToList());
+            this.EstadoSelecionado = context.Estados.FirstOrDefault();
+
+
+        }
+
+        public void Excluir()
+        {
+            if (this.EstadoSelecionado.ID_Estado != 0)
+            {
+                this.context.Estados.Remove(
+                    this.EstadoSelecionado);
+            }
+            this.Estados.Remove(this.EstadoSelecionado);
         }
 
         public void Salvar()
@@ -30,22 +52,12 @@ namespace SapatosWPF.ViewModel
             this.context.SaveChanges();
         }
 
-        public void Excluir()
-        {
-            if (this.estadoSelecionado.ID_Estado != 0)
-            {
-                this.context.Estados.Remove(this.estadoSelecionado);
-
-            }
-        }
-
         public void Adicionar()
         {
-            Sapatos.Models.Estados e = new Sapatos.Models.Estados();
+            Estados e = new Estados();
             this.Estados.Add(e);
             this.context.Estados.Add(e);
-            this.estadoSelecionado = e;
+            this.EstadoSelecionado = e;
         }
-
     }
 }

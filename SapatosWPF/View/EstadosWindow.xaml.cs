@@ -19,16 +19,17 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class EstadosWindow : Window
     {
-        //public ViewModel.EstadosViewModel EstadosViewModel { get; set; }
+        public ViewModel.EstadosViewModel EstadosViewModel { get; set; }
         public EstadosWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            this.EstadosViewModel = new ViewModel.EstadosViewModel();
+            this.DataContext = this.EstadosViewModel;
         }
 
         private void SalvarEstado_Click(object sender, RoutedEventArgs e)
         {
-            //this.EstadosViewModel.Salvar();
+            this.EstadosViewModel.Salvar();
             this.Close();
         }
 
@@ -39,12 +40,12 @@ namespace SapatosWPF.View
 
         private void ExcluirEstado_Click(object sender, RoutedEventArgs e)
         {
-            //this.EstadosViewModel.Excluir();
+            this.EstadosViewModel.Excluir();
         }
 
         private void AdicionarEstado_Click(object sender, RoutedEventArgs e)
         {
-            //this.EstadosViewModel.Adicionar();
+            this.EstadosViewModel.Adicionar();
         }
     }
 }

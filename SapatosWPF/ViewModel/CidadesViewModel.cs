@@ -1,34 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sapatos;
+using Sapatos.Models;
 
 namespace SapatosWPF.ViewModel
 {
     public class CidadesViewModel
     {
-        public Sapatos.Models.Cidades Cidade { get; set; }
+        public ObservableCollection<Cidades> Cidades { get; set; }
+        public ObservableCollection<Estados> Estados { get; set; }
 
-        public Sapatos.Models.Estados Estado { get; set; }
+        public Boolean PodeExcluir
+        {
+            get
+            {
+                return this.CidadeSelecionada != null;
+            }
+        }
+        public Estados EstadoSelecionado { get; set; }
+        public Cidades CidadeSelecionada { get; set; }
+        private SapatosContext context { get; set; }
+        public Cidades cidade { get; set; }
 
-        Sapatos.Models.SapatosContext context { get; set; }
-
-        public Sapatos.Models.Cidades cidadeSelecionada { get; set; }
-        public ObservableCollection<Sapatos.Models.Cidades> cidades { get; set; }
-
-        public Sapatos.Models.Estados estadosSelecionada { get; set; }
-        public ObservableCollection<Sapatos.Models.Estados> Estados { get; set; }
-
-
-        public Boolean podeExcluir => this.cidadeSelecionada != null;
         public CidadesViewModel()
         {
+            cidade = new Cidades();
             context = new Sapatos.Models.SapatosContext();
-            this.Estado = new Sapatos.Models.Estados();
-            this.cidades = new ObservableCollection<Sapatos.Models.Cidades>(context.Cidades.ToList());
-            this.cidadeSelecionada = context.Cidades.FirstOrDefault();
+            this.Cidades = new ObservableCollection<Cidades>(context.Cidades.Include("Estado").ToList());
+            this.Estados = new ObservableCollection<Estados>(context.Estados.ToList());
+            this.CidadeSelecionada = context.Cidades.FirstOrDefault();
+            this.EstadoSelecionado = context.Estados.FirstOrDefault();
+
+
+        }
+
+        public void Excluir()
+        {
+            if (this.CidadeSelecionada.ID_Cidade != 0)
+            {
+                this.context.Cidades.Remove(
+                    this.CidadeSelecionada);
+            }
+            this.Cidades.Remove(this.CidadeSelecionada);
         }
 
         public void Salvar()
@@ -36,22 +54,12 @@ namespace SapatosWPF.ViewModel
             this.context.SaveChanges();
         }
 
-        public void Excluir()
-        {
-            if (this.cidadeSelecionada.ID_Cidade != 0)
-            {
-                this.context.Cidades.Remove(this.cidadeSelecionada);
-
-            }
-        }
-
         public void Adicionar()
         {
-            Sapatos.Models.Cidades c = new Sapatos.Models.Cidades();
-            this.cidades.Add(c);
+            Cidades c = new Cidades();
+            this.Cidades.Add(c);
             this.context.Cidades.Add(c);
-            this.cidadeSelecionada = c;
+            this.CidadeSelecionada = c;
         }
-
     }
 }
