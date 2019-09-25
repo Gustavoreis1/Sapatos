@@ -11,10 +11,17 @@ namespace SapatosWPF.ViewModel
     public class VendaViewModel
     {
         public Venda Venda { get; set; }
+        public Modelo Modelo { get; set; }
+        public PessoaFisica PessoaFisica { get; set; }
+        public PessoaJuridica PessoaJuridica { get; set; }
         private SapatosContext context { get; set; }
 
         public ObservableCollection<Venda> Vendas { get; set; }
+        public ObservableCollection<Modelo> Modelos { get; set; }
+        public ObservableCollection<PessoaFisica> PessoaFisicas { get; set; }
+        public ObservableCollection<PessoaJuridica> PessoaJuridicas { get; set; }
         public Venda VendaSelecionada { get; set; }
+        public Modelo ModeloSelecionado { get; set; }
 
 
         public Boolean podeExcluir => this.VendaSelecionada != null;
@@ -22,6 +29,8 @@ namespace SapatosWPF.ViewModel
         {
             this.Venda = new Venda();
             context = new SapatosContext();
+            this.Modelos = new ObservableCollection<Modelo>(context.Modelos.ToList());
+            this.ModeloSelecionado = context.Modelos.FirstOrDefault();
         }
         public void Salvar()
         {

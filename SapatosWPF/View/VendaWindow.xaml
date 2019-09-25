@@ -26,13 +26,13 @@
         <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">Modelo:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="2" FontFamily="Corbel" FontSize="24">Tamanho:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="3" FontFamily="Corbel" FontSize="24">Quantidade:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4" FontFamily="Corbel" FontSize="24">Valor Unitario:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" FontFamily="Corbel" FontSize="24">Valor Total:</TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="5" FontFamily="Corbel" FontSize="24">Data da Venda:</TextBlock>
         <ComboBox x:Name="Cliente" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></ComboBox>
         <DataGrid x:Name="Modelo" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20"></DataGrid>
         <ComboBox x:Name="Tamanho"  Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20"></ComboBox>
         <ComboBox x:Name="Quantidade" Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20"></ComboBox>
-        <TextBox x:Name="ValorUnitario" Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20"></TextBox>
+        <TextBox x:Name="ValorTotal" Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20"></TextBox>
         <DatePicker x:Name="DataVenda" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20"></DatePicker>
         <StackPanel HorizontalAlignment="Center" Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Button x:Name="SalvarVenda" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarVenda_Click" Background="#FF2EDC6E">Salvar</Button>
