@@ -19,7 +19,7 @@ namespace SapatosWPF.View
     /// </summary>
     public partial class VendaWindow : Window
     {
-        //public ViewModel.VendaViewModel VendaViewModel { get; set; }
+        public ViewModel.VendaViewModel VendaViewModel { get; set; }
         public VendaWindow()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace SapatosWPF.View
 
         private void SalvarVenda_Click(object sender, RoutedEventArgs e)
         {
-            //this.VendaViewModel.Salvar();
+            this.VendaViewModel.Salvar();
             this.Close();
         }
 
@@ -39,12 +39,12 @@ namespace SapatosWPF.View
 
         private void ExcluirVenda_Click(object sender, RoutedEventArgs e)
         {
-            //this.VendaViewModel.Excluir();
+            this.VendaViewModel.Excluir();
         }
 
         private void AdicionarVenda_Click(object sender, RoutedEventArgs e)
         {
-            //this.VendaViewModel.Adicionar();
+            this.VendaViewModel.Adicionar();
         }
     }
 }
