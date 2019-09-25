@@ -25,6 +25,12 @@ namespace Sapatos.Migrations
             AdicionarEstado(context,Est);
             AdicionarCidade(context, Cid);
             AdicionarCidade(context, Cid2);
+
+            Modelo m1 = new Modelo() { Nome = "teste", Cadarco = "Sim", Cor = "Preto", Fotografia = "www.teste.com.br/teste.png", Material = "Couro", Preco = 20 };
+            Sapato s1 = new Sapato() { Modelo = m1, Numerecao = 47, Quantidade = 10 };
+            AdicionarModelo(context,m1);
+            AdicionarSapato(context,s1);
+
             PessoaFisica pfTeste1 = new PessoaFisica()
             {
                 Nome = "Teste pessoa fisica 1",
@@ -102,6 +108,31 @@ namespace Sapatos.Migrations
             if (c == null)
             {
                 context.Cidades.Add(cid);
+            }
+        }
+
+
+        private static void AdicionarModelo(Models.SapatosContext context, Modelo mod)
+        {
+            Modelo m =
+                    (from db in context.Modelos
+                     where db.Nome == mod.Nome
+                     select db).FirstOrDefault();
+            if (m == null)
+            {
+                context.Modelos.Add(mod);
+            }
+        }
+
+        private static void AdicionarSapato(Models.SapatosContext context, Sapato sap)
+        {
+            Sapato s =
+                    (from db in context.Sapatos
+                     where db.ID_Sapato== sap.ID_Sapato
+                     select db).FirstOrDefault();
+            if (s == null)
+            {
+                context.Sapatos.Add(sap);
             }
         }
     }

@@ -31,7 +31,7 @@ namespace SapatosWPF.ViewModel
             context = new SapatosContext();
             this.Sapatos = new ObservableCollection<Sapato>(context.Sapatos.Include("Modelo").ToList());
             this.Modelos = new ObservableCollection<Modelo>(context.Modelos.ToList());
-            this.SapatoSelecionado = context.Sapatos.FirstOrDefault();
+            this.SapatoSelecionado = context.Sapatos.Include("Modelo").FirstOrDefault();
             this.ModeloSelecionado = context.Modelos.FirstOrDefault();
         }
 

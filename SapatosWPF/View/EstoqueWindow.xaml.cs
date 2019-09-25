@@ -14,21 +14,20 @@ using System.Windows.Shapes;
 
 namespace SapatosWPF.View
 {
-    /// <summary>
-    /// Lógica interna para EstoqueWindow.xaml
-    /// </summary>
+
     public partial class EstoqueWindow : Window
     {
-        //public ViewModel.EstoqueViewModel EstoqueViewModel { get; set; }
+        public ViewModel.SapatoViewModel EstoqueViewModel { get; set; }
         public EstoqueWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            this.EstoqueViewModel = new ViewModel.SapatoViewModel();
+            this.DataContext = this.EstoqueViewModel;
         }
 
         private void SalvarEstoque_Click(object sender, RoutedEventArgs e)
         {
-            //this.EstoqueViewModel.Salvar();
+            this.EstoqueViewModel.Salvar();
             this.Close();
         }
 
@@ -39,12 +38,12 @@ namespace SapatosWPF.View
 
         private void ExcluirEstoque_Click(object sender, RoutedEventArgs e)
         {
-            //this.EstoqueViewModel.Excluir();
+            this.EstoqueViewModel.Excluir();
         }
 
         private void AdicionarEstoque_Click(object sender, RoutedEventArgs e)
         {
-            //this.EstoqueViewModel.Adicionar();
+            this.EstoqueViewModel.Adicionar();
         }
         
     }
