@@ -14,14 +14,18 @@ namespace SapatosWPF.ViewModel
         public Modelo Modelo { get; set; }
         public PessoaFisica PessoaFisica { get; set; }
         public PessoaJuridica PessoaJuridica { get; set; }
+        public Sapato Sapato { get; set; }
         private SapatosContext context { get; set; }
 
         public ObservableCollection<Venda> Vendas { get; set; }
         public ObservableCollection<Modelo> Modelos { get; set; }
+        public ObservableCollection<Sapato> Sapatos { get; set; }
         public ObservableCollection<PessoaFisica> PessoaFisicas { get; set; }
         public ObservableCollection<PessoaJuridica> PessoaJuridicas { get; set; }
+
         public Venda VendaSelecionada { get; set; }
         public Modelo ModeloSelecionado { get; set; }
+        public Modelo SapatoSelecionado { get; set; }
 
 
         public Boolean podeExcluir => this.VendaSelecionada != null;
@@ -30,6 +34,7 @@ namespace SapatosWPF.ViewModel
             this.Venda = new Venda();
             context = new SapatosContext();
             this.Modelos = new ObservableCollection<Modelo>(context.Modelos.ToList());
+            this.Sapatos = new ObservableCollection<Sapato>(context.Sapatos.Include("Modelo").ToList());
             this.ModeloSelecionado = context.Modelos.FirstOrDefault();
         }
         public void Salvar()
@@ -43,8 +48,9 @@ namespace SapatosWPF.ViewModel
             if (this.VendaSelecionada.ID_Venda != 0)
             {
                 this.context.Vendas.Remove(this.VendaSelecionada);
-
+                this.Vendas.Remove(this.VendaSelecionada);
             }
+            this.context.SaveChanges();
         }
         public void Adicionar()
         {
