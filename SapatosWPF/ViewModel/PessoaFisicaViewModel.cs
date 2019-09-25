@@ -47,6 +47,7 @@ namespace SapatosWPF.ViewModel
                 this.context.PessoaFisicas.Remove(this.pfSelecionada);
 
             }
+            this.Pessoas.Remove(this.pfSelecionada);
         }
         public void Adicionar()
         {

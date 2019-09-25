@@ -47,7 +47,7 @@ namespace SapatosWPF.ViewModel
             if (this.SapatoSelecionado.ID_Sapato != 0)
             {
                 this.context.Sapatos.Remove(this.SapatoSelecionado);
-
+                this.Sapatos.Remove(this.SapatoSelecionado);
             }
         }
         public void Adicionar()

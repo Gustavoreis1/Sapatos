@@ -46,6 +46,7 @@ namespace SapatosWPF.ViewModel
                 this.context.PessoaJuridicas.Remove(this.PjSelecionada);
 
             }
+            this.Pessoas.Remove(this.PjSelecionada);
         }
 
         public void Adicionar()

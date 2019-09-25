@@ -33,8 +33,10 @@ namespace SapatosWPF.ViewModel
         {
             if (this.ModeloSelecionado.ID_Nodelo != 0)
             {
+
                 this.context.Modelos.Remove(this.ModeloSelecionado);
 
+                this.Modelos.Remove(this.ModeloSelecionado);
             }
         }
         public void Adicionar()
