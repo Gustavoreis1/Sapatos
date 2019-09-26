@@ -15,15 +15,15 @@
             <MenuItem Header="Gerenciar">
                 <MenuItem Header="Cadastrar">
                     <MenuItem x:Name="PessoaJuridicaMenu" Header="Pessoa Juridica" Click="PessoaJuridicaMenu_Click"/>
-                    <MenuItem x:Name="PessoaFisicaMenu" Header="Pessoa Fisica" Click="PessoaFisicaMenu_Click"/>
-                    <MenuItem x:Name="CidadesMenu" Header="Cidades" Click="CidadesMenu_Click"/>
-                    <MenuItem x:Name="EstadosMenu" Header="Estados" Click="EstadosMenu_Click"/>
+                    <MenuItem x:Name="PessoaFisicaMenu"   Header="Pessoa Fisica"   Click="PessoaFisicaMenu_Click"/>
+                    <MenuItem x:Name="CidadesMenu"        Header="Cidades"         Click="CidadesMenu_Click"/>
+                    <MenuItem x:Name="EstadosMenu"        Header="Estados"         Click="EstadosMenu_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="EstoqueMenu" Header="Estoque" Click="EstoqueMenu_Click"/>
-                <MenuItem x:Name="ModeloMenu" Header="Modelos" Click="ModeloMenu_Click"/>
+                <MenuItem x:Name="ModeloMenu"  Header="Modelos" Click="ModeloMenu_Click"/>
             </MenuItem>
             <MenuItem x:Name="VendaMenu" Header="Venda" Click="VendaMenu_Click"/>
-            <MenuItem x:Name="SairMenu" Header="Sair" Click="SairMenu_Click"/>
+            <MenuItem x:Name="SairMenu"  Header="Sair"  Click="SairMenu_Click"/>
         </Menu>
     </Grid>
 </Window>

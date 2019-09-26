@@ -5,51 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SapatosWPF.View"
         mc:Ignorable="d"
-        Title="Realizar Venda" Height="450" Width="800">
+        Title="Realizar Venda" Height="1000" Width="1000">
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> 
+            <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>      
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Cliente:</TextBlock>
-        <TextBlock  Grid.ColumnSpan="2" Grid.Row="1" FontFamily="Corbel" FontSize="24" HorizontalAlignment="Center">Sapato</TextBlock>
-        <DataGrid  Grid.ColumnSpan="2" Grid.Row="2" FontFamily="Corbel" FontSize="24">
+        <TextBlock  Grid.Column="0"     Grid.Row="0" FontFamily="Corbel" FontSize="24">Cliente:</TextBlock>
+        <TextBlock  Grid.ColumnSpan="2" Grid.Row="2" FontFamily="Corbel" FontSize="24">Sapato</TextBlock>
+        <DataGrid   Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Corbel" FontSize="24">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Modelo" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="Numeração" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cadarço" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="Material" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cor" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="Preço" Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID"         Binding="{Binding ID_Venda}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Modelo"     Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Numeração"  Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cadarço"    Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Material"   Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cor"        Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="Preço"      Binding="{Binding }"></DataGridTextColumn>
                 <DataGridTextColumn Header="Quantidade" Binding="{Binding }"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid  Grid.ColumnSpan="2" Grid.Row="2" FontFamily="Corbel" FontSize="24">
-            
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="5" FontFamily="Corbel" FontSize="24">INSERIR</TextBlock>
+        <DataGrid  Grid.ColumnSpan="2" Grid.Row="6" FontFamily="Corbel" FontSize="24">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
+                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
+            </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Column="0" Grid.Row="5" FontFamily="Corbel" FontSize="24">Valor Total:</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="6" FontFamily="Corbel" FontSize="24">Data da Venda:</TextBlock>
-        <ComboBox x:Name="Cliente" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></ComboBox>
-        <TextBox x:Name="ValorTotal" Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20"></TextBox>
-        <DatePicker x:Name="DataVenda" Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20"></DatePicker>
-        <StackPanel HorizontalAlignment="Center" Grid.Row="9" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="SalvarVenda" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarVenda_Click" Background="#FF2EDC6E">Salvar</Button>
-            <Button x:Name="ExcluirVenda" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirVenda_Click" Background="#FFAE4E3F">Excluir</Button>
-            <Button x:Name="AdicionarVenda" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarVenda_Click" Background="#FF2A86F3">Adicionar</Button>
-            <Button x:Name="CancelarVenda"   Width="100" Margin="0,0,50,0"  FontFamily="Corbel" FontSize="16" Click="CancelarVenda_Click">Cancelar</Button>
+        <TextBlock Grid.Column="0" Grid.Row="8" FontFamily="Corbel" FontSize="24">Data da Venda:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="10" FontFamily="Corbel" FontSize="24">Valor Total:</TextBlock>
+
+        <ComboBox   x:Name="Cliente"    Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20"></ComboBox>
+        <DatePicker x:Name="DataVenda"  Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20"></DatePicker>
+        <TextBox    x:Name="ValorTotal" Grid.Column="1" Grid.Row="10" FontFamily="Corbel" FontSize="20"></TextBox>
+
+        <StackPanel HorizontalAlignment="Center" Grid.Row="12" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="81,0">
+            <Button x:Name="SalvarVenda"     Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarVenda_Click" Background="#FF2EDC6E">Salvar</Button>
+            <Button x:Name="ExcluirVenda"    Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirVenda_Click" Background="#FFAE4E3F">Excluir</Button>
+            <Button x:Name="AdicionarVenda"  Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarVenda_Click" Background="#FF2A86F3">Adicionar</Button>
+            <Button x:Name="CancelarVenda"   Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="CancelarVenda_Click">Cancelar</Button>
         </StackPanel>
     </Grid>
 </Window>

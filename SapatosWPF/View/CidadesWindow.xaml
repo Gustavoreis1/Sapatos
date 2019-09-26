@@ -18,22 +18,25 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Nome:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Corbel" FontSize="24">Nome:  </TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="1" FontFamily="Corbel" FontSize="24">Estado:</TextBlock>
-        <TextBox x:Name="Nome" Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" Text="{Binding CidadeSelecionada.Nome}"></TextBox>
+        
+        <TextBox  x:Name="Nome"   Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" Text="{Binding CidadeSelecionada.Nome}"></TextBox>
         <ComboBox x:Name="Estado" Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Estados}" DisplayMemberPath="Nome" SelectedItem="{Binding CidadeSelecionada.Estado}"></ComboBox>
+        
         <DataGrid ItemsSource="{Binding Cidades}" SelectedItem="{Binding CidadeSelecionada}" AutoGenerateColumns="False" Grid.Row="2" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID_Cidade}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID_Cidade}">      </DataGridTextColumn>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Nome}">       </DataGridTextColumn>
                 <DataGridTextColumn Header="Estado" Binding="{Binding Estado.Nome}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        
         <StackPanel HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="SalvarCidade" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarCidade_Click" Background="#FF2EDC6E">Salvar</Button>
-            <Button x:Name="ExcluirCidade" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirCidade_Click" Background="#FFAE4E3F">Excluir</Button>
-            <Button x:Name="AdicionarCidade" Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarCidade_Click" Background="#FF2A86F3">Adicionar</Button>
-            <Button x:Name="CancelarCidade"   Width="100" Margin="0,0,50,0"  FontFamily="Corbel" FontSize="16" Click="CancelarCidade_Click">Cancelar</Button>
+            <Button x:Name="SalvarCidade"     Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarCidade_Click" Background="#FF2EDC6E">Salvar</Button>
+            <Button x:Name="ExcluirCidade"    Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="ExcluirCidade_Click" Background="#FFAE4E3F">Excluir</Button>
+            <Button x:Name="AdicionarCidade"  Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="AdicionarCidade_Click" Background="#FF2A86F3">Adicionar</Button>
+            <Button x:Name="CancelarCidade"   Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="CancelarCidade_Click">Cancelar</Button>
         </StackPanel>
     </Grid>
 </Window>
