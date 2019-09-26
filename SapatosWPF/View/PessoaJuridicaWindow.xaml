@@ -44,15 +44,15 @@
         
         <DataGrid ItemsSource="{Binding Pessoas}" SelectedItem="{Binding PjSelecionada}" AutoGenerateColumns="False" Grid.Row="8" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID_PJ}">                        </DataGridTextColumn>
-                <DataGridTextColumn Header="Razão Social" Binding="{Binding RazaoSocial}">        </DataGridTextColumn>
-                <DataGridTextColumn Header="CNPJ" Binding="{Binding CNPJ}">                       </DataGridTextColumn>
-                <DataGridTextColumn Header="Logradouro" Binding="{Binding Endereco.Logradouro}">  </DataGridTextColumn>
-                <DataGridTextColumn Header="Numero" Binding="{Binding Endereco.Numero}">          </DataGridTextColumn>
-                <DataGridTextColumn Header="CEP" Binding="{Binding Endereco.CEP}">                </DataGridTextColumn>
-                <DataGridTextColumn Header="Complemento" Binding="{Binding Endereco.Complemento}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Cidade" Binding="{Binding Cidade.Nome}">              </DataGridTextColumn>
-                <DataGridTextColumn Header="Estado" Binding="{Binding Cidade.Estado.Nome}">       </DataGridTextColumn>
+                <DataGridTextColumn Header="ID"           Binding="{Binding ID_PJ}">                </DataGridTextColumn>
+                <DataGridTextColumn Header="Razão Social" Binding="{Binding RazaoSocial}">          </DataGridTextColumn>
+                <DataGridTextColumn Header="CNPJ"         Binding="{Binding CNPJ}">                 </DataGridTextColumn>
+                <DataGridTextColumn Header="Logradouro"   Binding="{Binding Endereco.Logradouro}">  </DataGridTextColumn>
+                <DataGridTextColumn Header="Numero"       Binding="{Binding Endereco.Numero}">      </DataGridTextColumn>
+                <DataGridTextColumn Header="CEP"          Binding="{Binding Endereco.CEP}">         </DataGridTextColumn>
+                <DataGridTextColumn Header="Complemento"  Binding="{Binding Endereco.Complemento}"> </DataGridTextColumn>
+                <DataGridTextColumn Header="Cidade"       Binding="{Binding Cidade.Nome}">          </DataGridTextColumn>
+                <DataGridTextColumn Header="Estado"       Binding="{Binding Cidade.Estado.Nome}">   </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         
