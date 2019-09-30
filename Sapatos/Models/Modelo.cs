@@ -32,5 +32,6 @@ namespace Sapatos.Models
         public decimal Preco { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
         public string Fotografia { get; set; }
+        public IList<Sapato> Sapatos { get; set; }
     }
 }

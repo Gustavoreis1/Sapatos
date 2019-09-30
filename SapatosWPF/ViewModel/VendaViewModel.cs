@@ -19,7 +19,7 @@ namespace SapatosWPF.ViewModel
 
         public ObservableCollection<Venda> Vendas { get; set; }
         public ObservableCollection<Modelo> Modelos { get; set; }
-        public ObservableCollection<Sapato> Sapatos { get; set; }
+        public IList<Sapato> Sapatos { get; set; }
         public ObservableCollection<Cliente> Clientes { get; set; }
         public ObservableCollection<PessoaFisica> PessoaFisicas { get; set; }
         public ObservableCollection<PessoaJuridica> PessoaJuridicas { get; set; }
@@ -34,8 +34,9 @@ namespace SapatosWPF.ViewModel
         {
             this.Venda = new Venda();
             context = new SapatosContext();
+            this.Vendas = new ObservableCollection<Venda>(context.Vendas.ToList());
             this.Clientes = new ObservableCollection<Cliente>(context.Clientes.ToList());
-            this.Modelos = new ObservableCollection<Modelo>(context.Modelos.ToList());
+            this.Modelos = new ObservableCollection<Modelo>(context.Modelos.Include("Sapatos").ToList());
             this.Sapatos = new ObservableCollection<Sapato>(context.Sapatos.Include("Modelo").ToList());
             this.ModeloSelecionado = context.Modelos.FirstOrDefault();
         }

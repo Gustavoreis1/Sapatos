@@ -48,7 +48,7 @@ namespace Sapatos.Migrations
 
             PessoaJuridica pjTeste1 = new PessoaJuridica()
             {
-                Nome = "Teste pessoa fisica 1",
+                Nome = "Teste pessoa Juridica 1",
                 RazaoSocial = "Empresa de teste",
                 CNPJ = "00000000000100",
                 Endereco = new Endereco()

@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:SapatosWPF.View"
         mc:Ignorable="d"
         Title="Realizar Venda" Height="1000" Width="1000">
+    <Window.Resources>
+        <CollectionViewSource x:Key="SapatosList"                               
+                              Source="{Binding Modelo.Sapatos}" />
+    </Window.Resources>
     <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -28,34 +32,36 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0"     Grid.Row="0" FontFamily="Corbel" FontSize="24">Cliente:</TextBlock>
         <TextBlock Grid.ColumnSpan="2" Grid.Row="2" FontFamily="Corbel" FontSize="24">Sapato</TextBlock>
-        <DataGrid  ItemsSource="{Binding Sapatos}" Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Corbel" FontSize="24">
+        <DataGrid  ItemsSource="{Binding Modelos}" 
+                   SelectedItem="{Binding Modelo}"
+                   AutoGenerateColumns="False"
+                   Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Corbel" FontSize="24">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Selecionar" Binding="{Binding Venda}"></DataGridTextColumn>
-                <DataGridTextColumn Header="ID"         Binding="{Binding Modelo.ID_Nodelo}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Modelo"     Binding="{Binding Modelo.Nome}">     </DataGridTextColumn>
-                <DataGridTextColumn Header="Numeração"  Binding="{Binding Numerecao}">       </DataGridTextColumn>
-                <DataGridTextColumn Header="Cadarço"    Binding="{Binding Modelo.Cadarco}">  </DataGridTextColumn>
-                <DataGridTextColumn Header="Material"   Binding="{Binding Modelo.Material}"> </DataGridTextColumn>
-                <DataGridTextColumn Header="Cor"        Binding="{Binding Modelo.Cor}">      </DataGridTextColumn>
-                <DataGridTextColumn Header="Preço"      Binding="{Binding Modelo.Preco}">    </DataGridTextColumn>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}">      </DataGridTextColumn>
+                <DataGridTextColumn Header="ID"         Binding="{Binding ID_Nodelo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Modelo"     Binding="{Binding Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Cadarço"    Binding="{Binding Cadarco}">  </DataGridTextColumn>
+                <DataGridTextColumn Header="Material"   Binding="{Binding Material}"> </DataGridTextColumn>
+                <DataGridTextColumn Header="Cor"        Binding="{Binding Cor}">      </DataGridTextColumn>
+                <DataGridTextColumn Header="Preço"      Binding="{Binding Preco}">    </DataGridTextColumn>
+                <DataGridComboBoxColumn Header="Numeracao" 
+                                        ItemsSource="{Binding Source={StaticResource SapatosList}}"
+                                        DisplayMemberPath="Numerecao"
+                                        SelectedValueBinding="{Binding Sapatos}"
+                                        SelectedValuePath="ID_Sapato"
+                                        >
+
+                </DataGridComboBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.ColumnSpan="2" Grid.Row="5" FontFamily="Corbel" FontSize="24">INSERIR</TextBlock>
-        <DataGrid  Grid.ColumnSpan="2" Grid.Row="6" FontFamily="Corbel" FontSize="24">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
-                <DataGridTextColumn Header="INSERIR" Binding="{Binding }"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="5" FontFamily="Corbel" FontSize="24">Quantidade: </TextBlock>
+        <TextBox x:Name="Quantidade" Grid.Column="2" Grid.Row="5" FontFamily="Corbel" FontSize="20" Text="{Binding Venda.Quantidade}"></TextBox>
         <TextBlock Grid.Column="0" Grid.Row="08" FontFamily="Corbel" FontSize="24">Data da Venda: </TextBlock>
         <TextBlock Grid.Column="0" Grid.Row="10" FontFamily="Corbel" FontSize="24">Valor Total:   </TextBlock>
 
-        <ComboBox   x:Name="Cliente"    Grid.Column="1" Grid.Row="00" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Clientes}" DisplayMemberPath="Nome" SelectedItem="{Binding VendaSelecionada.Cliente}"></ComboBox>
-        <DatePicker x:Name="DataVenda"  Grid.Column="1" Grid.Row="08" FontFamily="Corbel" FontSize="20" Text="{Binding VendaSelecionada.DataVenda}" ></DatePicker>
-        <TextBox    x:Name="ValorTotal" Grid.Column="1" Grid.Row="10" FontFamily="Corbel" FontSize="20" Text="{Binding VendaSelecionada.ValorTotal}"></TextBox>
+        <ComboBox   x:Name="Cliente"    Grid.Column="1" Grid.Row="00" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Clientes}" DisplayMemberPath="Nome" SelectedItem="{Binding Venda.Cliente}"></ComboBox>
+        <DatePicker x:Name="DataVenda"  Grid.Column="1" Grid.Row="08" FontFamily="Corbel" FontSize="20" Text="{Binding Venda.DataVenda}" ></DatePicker>
+        <TextBox    x:Name="ValorTotal" Grid.Column="1" Grid.Row="10" FontFamily="Corbel" FontSize="20" Text="{Binding Venda.ValorTotal}"></TextBox>
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="12" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="81,0">
             <Button x:Name="SalvarVenda"     Width="100" Margin="0,0,50,0" FontFamily="Corbel" FontSize="16" Click="SalvarVenda_Click" Background="#FF2EDC6E">Salvar</Button>
