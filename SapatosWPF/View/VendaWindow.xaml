@@ -28,16 +28,17 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0"     Grid.Row="0" FontFamily="Corbel" FontSize="24">Cliente:</TextBlock>
         <TextBlock Grid.ColumnSpan="2" Grid.Row="2" FontFamily="Corbel" FontSize="24">Sapato</TextBlock>
-        <DataGrid  ItemsSource="{Binding Vendas}" SelectedItem="{Binding VendaSelecionada}" Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Corbel" FontSize="24">
+        <DataGrid  ItemsSource="{Binding Sapatos}" Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Corbel" FontSize="24">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"         Binding="{Binding Sapato.Modelo.ID_Sapato}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Modelo"     Binding="{Binding Sapato.Modelo.Nome}">     </DataGridTextColumn>
-                <DataGridTextColumn Header="Numeração"  Binding="{Binding Sapato.Numerecao}">       </DataGridTextColumn>
-                <DataGridTextColumn Header="Cadarço"    Binding="{Binding Sapato.Modelo.Cadarco}">  </DataGridTextColumn>
-                <DataGridTextColumn Header="Material"   Binding="{Binding Sapato.Modelo.Material}"> </DataGridTextColumn>
-                <DataGridTextColumn Header="Cor"        Binding="{Binding Sapato.Modelo.Cor}">      </DataGridTextColumn>
-                <DataGridTextColumn Header="Preço"      Binding="{Binding Sapato.Modelo.Preco}">    </DataGridTextColumn>
-                <DataGridTextColumn Header="Quantidade" Binding="{Binding Sapato.Quantidade}">      </DataGridTextColumn>
+                <DataGridTextColumn Header="Selecionar" Binding="{Binding Venda}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID"         Binding="{Binding Modelo.ID_Nodelo}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Modelo"     Binding="{Binding Modelo.Nome}">     </DataGridTextColumn>
+                <DataGridTextColumn Header="Numeração"  Binding="{Binding Numerecao}">       </DataGridTextColumn>
+                <DataGridTextColumn Header="Cadarço"    Binding="{Binding Modelo.Cadarco}">  </DataGridTextColumn>
+                <DataGridTextColumn Header="Material"   Binding="{Binding Modelo.Material}"> </DataGridTextColumn>
+                <DataGridTextColumn Header="Cor"        Binding="{Binding Modelo.Cor}">      </DataGridTextColumn>
+                <DataGridTextColumn Header="Preço"      Binding="{Binding Modelo.Preco}">    </DataGridTextColumn>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}">      </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.ColumnSpan="2" Grid.Row="5" FontFamily="Corbel" FontSize="24">INSERIR</TextBlock>

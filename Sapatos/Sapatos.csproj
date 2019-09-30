@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201909232313341_correcao_classe_sapato_201909232013.Designer.cs">
       <DependentUpon>201909232313341_correcao_classe_sapato_201909232013.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909300007436_VendaSapato201909292107.cs" />
+    <Compile Include="Migrations\201909300007436_VendaSapato201909292107.Designer.cs">
+      <DependentUpon>201909300007436_VendaSapato201909292107.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cidades.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -96,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909232313341_correcao_classe_sapato_201909232013.resx">
       <DependentUpon>201909232313341_correcao_classe_sapato_201909232013.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909300007436_VendaSapato201909292107.resx">
+      <DependentUpon>201909300007436_VendaSapato201909292107.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

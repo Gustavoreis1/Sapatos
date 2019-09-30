@@ -21,5 +21,6 @@ namespace Sapatos.Models
         [Required(ErrorMessage = "O campo Valor Total é requerido!!")]
         public decimal ValorTotal { get; set; }
         public Cliente Cliente { get; set; }
+        public IList<Sapato> VendaSapatos {get; set;}
     }
 }

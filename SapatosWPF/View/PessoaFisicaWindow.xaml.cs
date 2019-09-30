@@ -40,7 +40,7 @@ namespace SapatosWPF.View
 
         private void ExcluirPF_Click(object sender, RoutedEventArgs e)
         {
-            //this.PFViewModel.Excluir();
+            this.PFViewModel.Excluir();
         }
 
         private void AdicionarPF_Click(object sender, RoutedEventArgs e)

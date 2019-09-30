@@ -23,7 +23,8 @@ namespace SapatosWPF.View
         public VendaWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            VendaViewModel = new ViewModel.VendaViewModel();
+            this.DataContext = this.VendaViewModel;
         }
 
         private void SalvarVenda_Click(object sender, RoutedEventArgs e)
