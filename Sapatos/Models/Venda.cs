@@ -13,7 +13,7 @@ namespace Sapatos.Models
         public int ID_Venda { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo Quantidade é requerido!!")]
-        public string Quantidade { get; set; }
+        public int Quantidade { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
         [Required(ErrorMessage = "O campo Data Venda é requerido!!")]
         public DateTime DataVenda { get; set; }
@@ -21,6 +21,6 @@ namespace Sapatos.Models
         [Required(ErrorMessage = "O campo Valor Total é requerido!!")]
         public decimal ValorTotal { get; set; }
         public Cliente Cliente { get; set; }
-        public IList<Sapato> VendaSapatos {get; set;}
+        public Sapato Sapato {get; set;}
     }
 }

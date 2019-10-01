@@ -74,6 +74,14 @@
     <Compile Include="Migrations\201909302215468_modelo_sapatos_201909301915.Designer.cs">
       <DependentUpon>201909302215468_modelo_sapatos_201909301915.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909302258479_venda_sapato201909301958.cs" />
+    <Compile Include="Migrations\201909302258479_venda_sapato201909301958.Designer.cs">
+      <DependentUpon>201909302258479_venda_sapato201909301958.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909302353286_venda_sapato201909302053.cs" />
+    <Compile Include="Migrations\201909302353286_venda_sapato201909302053.Designer.cs">
+      <DependentUpon>201909302353286_venda_sapato201909302053.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cidades.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -110,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909302215468_modelo_sapatos_201909301915.resx">
       <DependentUpon>201909302215468_modelo_sapatos_201909301915.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909302258479_venda_sapato201909301958.resx">
+      <DependentUpon>201909302258479_venda_sapato201909301958.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909302353286_venda_sapato201909302053.resx">
+      <DependentUpon>201909302353286_venda_sapato201909302053.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

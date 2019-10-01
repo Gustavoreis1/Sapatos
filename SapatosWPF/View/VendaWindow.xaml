@@ -37,7 +37,7 @@
                    AutoGenerateColumns="False"
                    Grid.ColumnSpan="2" Grid.Row="3" FontFamily="Corbel" FontSize="24">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Selecionar" Binding="{Binding Venda}"></DataGridTextColumn>
+                
                 <DataGridTextColumn Header="ID"         Binding="{Binding ID_Nodelo}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Modelo"     Binding="{Binding Nome}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Cadarço"    Binding="{Binding Cadarco}">  </DataGridTextColumn>
@@ -47,7 +47,7 @@
                 <DataGridComboBoxColumn Header="Numeracao" 
                                         ItemsSource="{Binding Source={StaticResource SapatosList}}"
                                         DisplayMemberPath="Numerecao"
-                                        SelectedValueBinding="{Binding Sapatos}"
+                                        SelectedValueBinding="{Binding Sapato}"
                                         SelectedValuePath="ID_Sapato"
                                         >
 
@@ -60,7 +60,7 @@
         <TextBlock Grid.Column="0" Grid.Row="10" FontFamily="Corbel" FontSize="24">Valor Total:   </TextBlock>
 
         <ComboBox   x:Name="Cliente"    Grid.Column="1" Grid.Row="00" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Clientes}" DisplayMemberPath="Nome" SelectedItem="{Binding Venda.Cliente}"></ComboBox>
-        <DatePicker x:Name="DataVenda"  Grid.Column="1" Grid.Row="08" FontFamily="Corbel" FontSize="20" Text="{Binding Venda.DataVenda}" ></DatePicker>
+        <DatePicker x:Name="DataVenda"  Grid.Column="1" Grid.Row="08" FontFamily="Corbel" FontSize="20" SelectedDate="{Binding Venda.DataVenda}" ></DatePicker>
         <TextBox    x:Name="ValorTotal" Grid.Column="1" Grid.Row="10" FontFamily="Corbel" FontSize="20" Text="{Binding Venda.ValorTotal}"></TextBox>
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="12" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="81,0">

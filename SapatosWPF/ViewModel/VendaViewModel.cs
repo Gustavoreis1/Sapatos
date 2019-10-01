@@ -26,7 +26,7 @@ namespace SapatosWPF.ViewModel
 
         public Venda VendaSelecionada { get; set; }
         public Modelo ModeloSelecionado { get; set; }
-        public Modelo SapatoSelecionado { get; set; }
+        public Sapato SapatoSelecionado { get; set; }
 
 
         public Boolean podeExcluir => this.VendaSelecionada != null;
@@ -38,11 +38,15 @@ namespace SapatosWPF.ViewModel
             this.Clientes = new ObservableCollection<Cliente>(context.Clientes.ToList());
             this.Modelos = new ObservableCollection<Modelo>(context.Modelos.Include("Sapatos").ToList());
             this.Sapatos = new ObservableCollection<Sapato>(context.Sapatos.Include("Modelo").ToList());
-            this.ModeloSelecionado = context.Modelos.FirstOrDefault();
+
+            Venda NewVenda = new Venda();
+            this.Vendas.Add(NewVenda);
+            this.context.Vendas.Add(NewVenda);
+            this.VendaSelecionada = NewVenda;
         }
         public void Salvar()
         {
-
+            
             this.context.SaveChanges();
         }
 
