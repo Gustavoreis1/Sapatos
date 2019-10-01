@@ -38,7 +38,7 @@ namespace SapatosWPF.ViewModel
             this.Clientes = new ObservableCollection<Cliente>(context.Clientes.ToList());
             this.Modelos = new ObservableCollection<Modelo>(context.Modelos.Include("Sapatos").ToList());
             this.Sapatos = new ObservableCollection<Sapato>(context.Sapatos.Include("Modelo").ToList());
-
+            this.Sapato = new Sapato();
             Venda NewVenda = new Venda();
             this.Vendas.Add(NewVenda);
             this.context.Vendas.Add(NewVenda);

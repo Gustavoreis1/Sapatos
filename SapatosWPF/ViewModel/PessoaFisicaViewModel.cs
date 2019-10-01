@@ -25,6 +25,7 @@ namespace SapatosWPF.ViewModel
         public PessoaFisicaViewModel()
         {
             this.PessoaFisica = new PessoaFisica();
+            this.Endereco = new Endereco();
             context = new SapatosContext();
             this.Pessoas = new ObservableCollection<PessoaFisica>(context.PessoaFisicas.Include("Endereco").ToList());
             this.pfSelecionada = context.PessoaFisicas.Include("Endereco").FirstOrDefault();
