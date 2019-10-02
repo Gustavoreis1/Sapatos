@@ -13,11 +13,12 @@ namespace SapatosWPF.ViewModel
         public PessoaJuridica PessoaJuridica { get; set; }
         public Endereco Endereco { get; set; }
         public Cidades Cidade { get; set; }
+        public Estados Estado { get; set; }
         public PessoaJuridica PjSelecionada { get; set; }
         public ObservableCollection<PessoaJuridica> Pessoas { get; set; }
         public ObservableCollection<Cidades> Cidades { get; set; }
         public ObservableCollection<Estados> Estados { get; set; }
-        SapatosContext context { get; set; }
+        private SapatosContext context { get; set; }
         public Cidades CidadeSelecionada { get; set; }
         public Estados EstadoSelecionado { get; set; }
 
@@ -25,9 +26,12 @@ namespace SapatosWPF.ViewModel
         public PessoaJuridicaViewModel()
         {
             this.PessoaJuridica = new PessoaJuridica();
+            this.Endereco = new Endereco();
+            this.Cidade = new Cidades();
+            this.Estado = new Estados();
             context = new SapatosContext();
             this.Pessoas = new ObservableCollection<PessoaJuridica>(context.PessoaJuridicas.Include("Endereco").ToList());
-            this.PjSelecionada = context.PessoaJuridicas.FirstOrDefault();
+            this.PjSelecionada = context.PessoaJuridicas.Include("Endereco").FirstOrDefault();
             this.Cidades = new ObservableCollection<Cidades>(context.Cidades.Include("Estado").ToList());
             this.Estados = new ObservableCollection<Estados>(context.Estados.ToList());
             this.CidadeSelecionada = context.Cidades.FirstOrDefault();
@@ -36,6 +40,9 @@ namespace SapatosWPF.ViewModel
 
         public void Salvar()
         {
+            this.Cidade.Estado = Estado;
+            this.Endereco.Cidade = Cidade;
+            this.PjSelecionada.Endereco = Endereco;
             this.context.SaveChanges();
         }
 
