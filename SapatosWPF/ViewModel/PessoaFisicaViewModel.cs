@@ -13,6 +13,7 @@ namespace SapatosWPF.ViewModel
         public PessoaFisica PessoaFisica { get; set; }
         public Endereco Endereco { get; set; }
         public Cidades Cidade { get; set; }
+        public Estados Estado { get; set; }
         public PessoaFisica pfSelecionada { get; set; }
         public ObservableCollection<PessoaFisica> Pessoas { get; set; }
         public ObservableCollection<Cidades> Cidades { get; set; }
@@ -26,6 +27,8 @@ namespace SapatosWPF.ViewModel
         {
             this.PessoaFisica = new PessoaFisica();
             this.Endereco = new Endereco();
+            this.Cidade = new Cidades();
+            this.Estado = new Estados();
             context = new SapatosContext();
             this.Pessoas = new ObservableCollection<PessoaFisica>(context.PessoaFisicas.Include("Endereco").ToList());
             this.pfSelecionada = context.PessoaFisicas.Include("Endereco").FirstOrDefault();
@@ -38,6 +41,9 @@ namespace SapatosWPF.ViewModel
         public void Salvar()
         {
             
+            this.Cidade.Estado = Estado;
+            this.Endereco.Cidade = Cidade;
+            this.pfSelecionada.Endereco = Endereco;
             this.context.SaveChanges();
         }
 

@@ -38,12 +38,12 @@
         <TextBox    x:Name="Nome"           Grid.Column="1" Grid.Row="0" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Nome}"></TextBox>
         <TextBox    x:Name="CPF"            Grid.Column="1" Grid.Row="1" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.CPF}"></TextBox>
         <DatePicker x:Name="DataNascimento" Grid.Column="1" Grid.Row="2" FontFamily="Corbel" FontSize="20" SelectedDate="{Binding pfSelecionada.DataNascimento}"></DatePicker>
-        <TextBox    x:Name="Logradouro"     Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Logradouro}"></TextBox>
-        <TextBox    x:Name="Numero"         Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Numero}"></TextBox>
-        <TextBox    x:Name="CEP"            Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.CEP}"></TextBox>
-        <TextBox    x:Name="Complemento"    Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20" Text="{Binding pfSelecionada.Endereco.Complemento}"></TextBox>
-        <ComboBox   x:Name="Cidade"         Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Cidades}" DisplayMemberPath="Nome" SelectedItem="{Binding pfSelecionada.Cidade}"></ComboBox>
-        <ComboBox   x:Name="Estado"         Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Estados}" DisplayMemberPath="Nome" SelectedItem="{Binding pfSelecionada.Cidade.Estado}"></ComboBox>
+        <TextBox    x:Name="Logradouro"     Grid.Column="1" Grid.Row="3" FontFamily="Corbel" FontSize="20" Text="{Binding Endereco.Logradouro}"></TextBox>
+        <TextBox    x:Name="Numero"         Grid.Column="1" Grid.Row="4" FontFamily="Corbel" FontSize="20" Text="{Binding Endereco.Numero}"></TextBox>
+        <TextBox    x:Name="CEP"            Grid.Column="1" Grid.Row="5" FontFamily="Corbel" FontSize="20" Text="{Binding Endereco.CEP}"></TextBox>
+        <TextBox    x:Name="Complemento"    Grid.Column="1" Grid.Row="6" FontFamily="Corbel" FontSize="20" Text="{Binding Endereco.Complemento}"></TextBox>
+        <ComboBox   x:Name="Cidade"         Grid.Column="1" Grid.Row="7" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Cidades}" DisplayMemberPath="Nome" SelectedItem="{Binding Cidade}"></ComboBox>
+        <ComboBox   x:Name="Estado"         Grid.Column="1" Grid.Row="8" FontFamily="Corbel" FontSize="20" ItemsSource="{Binding Path=Estados}" DisplayMemberPath="Nome" SelectedItem="{Binding Estado}"></ComboBox>
         
         <DataGrid 
             ItemsSource="{Binding Pessoas}" SelectedItem="{Binding pfSelecionada}" AutoGenerateColumns="False" Grid.Row="9" Grid.ColumnSpan="2">
