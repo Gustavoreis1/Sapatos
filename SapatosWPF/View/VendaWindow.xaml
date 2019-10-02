@@ -10,9 +10,6 @@
         <CollectionViewSource x:Key="SapatosList"                               
                               Source="{Binding Modelo.Sapatos}" >
         </CollectionViewSource>
-        <CollectionViewSource x:Key="VendaEstatica"                               
-                              Source="{Binding Venda.Sapato}" >
-        </CollectionViewSource>
     </Window.Resources>
     
     <Grid Margin="15">
@@ -52,7 +49,7 @@
                 <DataGridComboBoxColumn Header="Numeracao" 
                                         ItemsSource="{Binding Source={StaticResource SapatosList}}"
                                         DisplayMemberPath="Numerecao"
-                                        SelectedValueBinding="{Binding Source={StaticResource VendaEstatica}}"
+                                        
                                         SelectedValuePath="ID_Sapato"
                                         >
 
